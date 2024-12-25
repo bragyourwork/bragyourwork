@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "jspdf": "^2.5.2",
+    "pdf-lib": "^1.17.1",
+    "react-dropzone": "^14.2.3",
+    "react-toastify": "^10.0.6"
+  }
+}
