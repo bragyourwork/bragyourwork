@@ -12,7 +12,7 @@ function MyAccomplishments() {
   useEffect(() => {
     const fetchAccomplishments = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:4000/accomplishments/view/${userEmail}`);
+        const { data } = await axios.get(`https://api.bragyourwork.com/accomplishments/view/${userEmail}`);
         setAccomplishments(data);
       } catch (error) {
         console.error('Error fetching accomplishments', error);
@@ -29,7 +29,7 @@ function MyAccomplishments() {
   // Handle delete request
   const handleDelete = async (accomplishmentId) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/accomplishments/delete/${accomplishmentId}`);
+      const response = await axios.delete(`https://api.bragyourwork.com/accomplishments/delete/${accomplishmentId}`);
       console.log(response.data.message);  // Optional: log success message
       // Remove the deleted accomplishment from the state
       setAccomplishments(accomplishments.filter(accomplishment => accomplishment._id !== accomplishmentId));

@@ -35,7 +35,7 @@ function AddAccomplishment() {
     console.log([...formData]);
 
     try {
-      await axios.post('http://localhost:4000/accomplishments/add', formData);
+      await axios.post('https://api.bragyourwork.com/accomplishments/add', formData);
       console.log("hahahaha");
       alert('Accomplishment added successfully!');
       setTitle('');

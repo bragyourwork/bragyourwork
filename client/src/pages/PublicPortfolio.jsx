@@ -12,7 +12,7 @@ const PublicPortfolio = () => {
     useEffect(() => {
         const fetchShowcaseData = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/showcase/public/${userEmail}`);
+                const response = await fetch(`https://api.bragyourwork.com/showcase/public/${userEmail}`);
                 const data = await response.json();
                 setShowcaseData(data);
                 fetchAccomplishments(data.achievements);
@@ -36,7 +36,7 @@ const PublicPortfolio = () => {
             const accomplishmentPromises = achievementObjects.map((achievement) => {
 
                 const id = achievement._id || achievement; // Use _id if populated, or the raw ID
-                return fetch(`http://localhost:4000/accomplishments/${id}`).then((res) => res.json());
+                return fetch(`https://api.bragyourwork.com/accomplishments/${id}`).then((res) => res.json());
                 console.log("hahahahah")
             });
 
@@ -48,7 +48,7 @@ const PublicPortfolio = () => {
     };
 
     const handleImageClick = (id) => {
-        window.open(`http://localhost:5173/accomplishments/${id}`,'_blank');
+        window.open(`https://bragyourwork.com/accomplishments/${id}`,'_blank');
     }
 
     // Function to generate PDF for an accomplishment
@@ -81,7 +81,7 @@ const PublicPortfolio = () => {
     return (
         <>
             <a
-                href="http://localhost:5173/"
+                href="https://bragyourwork.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute top-4 left-4 bg-gray text-black py-4 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-200"

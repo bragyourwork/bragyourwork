@@ -13,7 +13,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/profile/${userEmail}`);
+        const response = await fetch(`https://api.bragyourwork.com/profile/${userEmail}`);
         if (response.ok) {
           const data = await response.json();
           setUser(data); // Set user data to state

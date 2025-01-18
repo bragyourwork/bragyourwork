@@ -1,7 +1,7 @@
 import { FiShare } from 'react-icons/fi';
 
 const ShareButton = ({ userEmail }) => {
-  const shareableLink = `http://localhost:5173/showcase/public/${userEmail}`;
+  const shareableLink = `https://bragyourwork.com/showcase/public/${userEmail}`;
 
 
 

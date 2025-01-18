@@ -9,7 +9,7 @@ function AccomplishmentDetail() {
   useEffect(() => {
     const fetchAccomplishment = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:4000/accomplishments/${id}`);
+        const { data } = await axios.get(`https://api.bragyourwork.com/accomplishments/${id}`);
         setAccomplishment(data);
       } catch (error) {
         console.error('Error fetching accomplishment', error);
@@ -26,7 +26,7 @@ z
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:4000/accomplishments/${id}`, accomplishment);
+      await axios.put(`https://api.bragyourwork.com/accomplishments/${id}`, accomplishment);
       alert('Accomplishment updated successfully!');
     } catch (error) {
       console.error('Error updating accomplishment', error);

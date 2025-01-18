@@ -24,7 +24,7 @@ const Login = () => {
         userPassword,
       };
 
-      const result = await axios.post("http://localhost:4000/auth/login", user);
+      const result = await axios.post("https://api.bragyourwork.com/auth/login", user);
       if (result.data.status === "Error") {
         alert("Incorrect email id or password. Please enter correct details.");
         console.log("wrong credentials ");

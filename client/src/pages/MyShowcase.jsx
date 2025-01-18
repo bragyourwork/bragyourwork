@@ -25,7 +25,7 @@ const MyShowcase = () => {
   useEffect(() => {
     const fetchShowcaseData = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:4000/showcase/${userEmail}`);
+        const { data } = await axios.get(`https://api.bragyourwork.com/showcase/${userEmail}`);
         // Check if profileInfo exists in data and set defaults if not
         const fetchedProfileInfo = data.profileInfo || {
           image: '',
@@ -48,7 +48,7 @@ const MyShowcase = () => {
   const handleSave = async () => {
     console.log({ profileInfo, achievements, customSections }); // Log to check data
     try {
-      await axios.post(`http://localhost:4000/showcase/${userEmail}`, {
+      await axios.post(`https://api.bragyourwork.com/showcase/${userEmail}`, {
         profileInfo,
         achievements,
         customSections,
@@ -59,7 +59,7 @@ const MyShowcase = () => {
     }
   };
 
-  const publicShowcaseUrl = `http://localhost:4000/public/${userEmail}`;
+  const publicShowcaseUrl = `https://api.bragyourwork.com/public/${userEmail}`;
   
   return (
     <div className="w-full sm:w-3/4 lg:w-2/3 mx-auto px-4 py-8">

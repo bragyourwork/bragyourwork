@@ -77,7 +77,7 @@ const Signup = () => {
       formData.append("profileImage", profileImage);
 
       const result = await axios.post(
-        "http://localhost:4000/auth/signup",
+        "https://api.bragyourwork.com/auth/signup",
         formData,
         {
           headers: {

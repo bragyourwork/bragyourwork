@@ -19,7 +19,7 @@ function AccomplishmentDetail() {
   useEffect(() => {
     const fetchAccomplishmentDetails = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:4000/accomplishments/view/${userEmail}/${id}`);
+        const { data } = await axios.get(`https://api.bragyourwork.com/accomplishments/view/${userEmail}/${id}`);
         data.date = new Date(data.date).toISOString().split('T')[0];
         setAccomplishment(data);
       } catch (error) {
@@ -53,7 +53,7 @@ function AccomplishmentDetail() {
         });
       }
 
-      const { data } = await axios.put(`http://localhost:4000/accomplishments/${id}`, formData, {
+      const { data } = await axios.put(`https://api.bragyourwork.com/accomplishments/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -88,7 +88,7 @@ function AccomplishmentDetail() {
 
   const removeFile = async (fileToRemove) => {
     try {
-      await axios.delete(`http://localhost:4000/accomplishments/${id}/files`, {
+      await axios.delete(`https://api.bragyourwork.com/accomplishments/${id}/files`, {
         data: { fileUrl: fileToRemove }
       });
 
